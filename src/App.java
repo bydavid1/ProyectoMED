@@ -15,9 +15,10 @@ public class App {
             do {
                 System.out.println("1. Agregar al inicio");
                 System.out.println("2. Agregar al final");
-                System.out.println("3. Eliminar el primero que cumpla una condición");
-                System.out.println("4. Imprimir");
-                System.out.println("5. Salir");
+                System.out.println("3. Eliminar");
+                System.out.println("4. Ordenar");
+                System.out.println("5. Imprimir");
+                System.out.println("6. Salir");
                 System.out.print("Opción: ");
                 opcion = sc.nextInt();
                 
@@ -40,16 +41,20 @@ public class App {
                         lista.deleteFirstWhere(n -> n.dato == dato);
                         break;
                     case 4:
+                        lista.sort();
                         lista.print();
                         break;
                     case 5:
+                        lista.print();
+                        break;
+                    case 6:
                         System.out.println("Saliendo");
                         break;
                     default:
                         System.out.println("Opción inválida");
                         break;
                 }
-            } while (opcion != 5);
+            } while (opcion != 6);
         }
     }
 }
